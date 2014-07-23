@@ -15,7 +15,7 @@ using the subvert_gl.pl script.
 You can build the output into a shared library and use it to overload the OpenGL calls your program uses.
 ````
 perl subvert_gl.pl
-gcc -o libGlOverride.so -shared -fPIC gloverride.o
+gcc -o libGlOverride.so -shared -fPIC gloverride.c
 LD_PRELOAD=libGlOverride.so ./yourprogram
 ````
 Note: You would need to add the following lines to your application for this to work.
@@ -35,8 +35,7 @@ int main (/* ... */)
 You can also simply compile the output into a .o and include it directly into your application.
 ````
 perl subvert_gl.pl
-gcc -c gloverride.o
-gcc -o yourprogram yoursource.c gloverride.o
+gcc -o yourprogram yoursource.c gloverride.c
 ````
 
 When your program runs, the OpenGL calls will have their non-pointer arguments displayed to stderr as double precision decimal numbers. Some conversion may be necessary to determine what GL_ define is being passed in.

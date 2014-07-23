@@ -39,4 +39,4 @@ gcc -c gloverride.o
 gcc -o yourprogram yoursource.c gloverride.o
 ````
 
-When your program runs, the OpenGL calls will have their non-pointer arguments displayed to STDERR as double precision decimal numbers. Some conversion may be necessary to determine what GL_ define is being passed in.
+When your program runs, the OpenGL calls will have their non-pointer arguments displayed to stderr as double precision decimal numbers. Some conversion may be necessary to determine what GL_ define is being passed in.
